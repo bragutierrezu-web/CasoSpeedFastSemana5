@@ -12,31 +12,31 @@ public class Main {
 
         ZonaDeCarga zona = new ZonaDeCarga();
 
-        // Creación e impresión de pedidos:
+
         zona.agregarPedido(new Pedido(1, "Santiago Centro"));
-        zona.agregarPedido(new Pedido(2, "Providencia"));
-        zona.agregarPedido(new Pedido(3, "Ñuñoa"));
-        zona.agregarPedido(new Pedido(4, "Recoleta"));
+        zona.agregarPedido(new Pedido(2, "San Bernardo"));
+        zona.agregarPedido(new Pedido(3, "El bosque"));
+        zona.agregarPedido(new Pedido(4, "La Pintana"));
         zona.agregarPedido(new Pedido(5, "Las Condes"));
 
-        // Creación y asignación de repartidores:
-        Repartidor juan = new Repartidor("Juan", zona);
-        Repartidor camila = new Repartidor("Camila", zona);
-        Repartidor pedro = new Repartidor("Pedro", zona);
+
+        Repartidor braulio = new Repartidor("Braulio", zona);
+        Repartidor cecilia = new Repartidor("Cecilia", zona);
+        Repartidor benjamin = new Repartidor("Benjamin", zona);
 
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
-        executor.execute(juan);
-        executor.execute(camila);
-        executor.execute(pedro);
+        executor.execute(braulio);
+        executor.execute(cecilia);
+        executor.execute(benjamin);
 
         executor.shutdown();
 
         while (!executor.isTerminated()) {
-            // Esperando que todas las entregas terminen...
+
         }
 
-        System.out.println("\n---Zona de carga vacía---\n");
-        System.out.println("Todos los pedidos han sido entregados exitosamente.");
+        System.out.println("\n---Resultado Final---\n");
+        System.out.println("Todos los pedidos han sido entregados exitosamente, gracias por su espera!!");
     }
 }
